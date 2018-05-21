@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>导航条</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style type="text/css">
+	body{margin:50px;padding:50px;}
+</style>
+</head>
+<body>
+	<div class="navbar navbar-default" role="navigation">
+	  <div class="navbar-header">
+	     　<!-- .navbar-toggle样式用于toggle收缩的内容，即nav-collapse collapse样式所在元素    button本来是隐藏的！-->
+	       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+	         <span class="sr-only">Toggle Navigation</span>
+	         <span class="icon-bar"></span>
+	         <span class="icon-bar"></span>
+	         <span class="icon-bar"></span>
+	       </button>
+	       <!-- 确保无论是宽屏还是窄屏，navbar-brand都显示 -->
+	       <a href="##" class="navbar-brand">慕课网</a>
+	  </div>
+	  <!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标，当点击icon-bar图标时，再展开。屏幕大于768px时，默认显示。 -->
+	  <div class="collapse navbar-collapse navbar-responsive-collapse">
+	    	<ul class="nav navbar-nav">
+	      		<li class="active"><a href="##">网站首页</a></li>
+	      		<li><a href="##">系列教程</a></li>
+	      		<li><a href="##">名师介绍</a></li>
+	      		<li><a href="##">成功案例</a></li>
+	      		<li><a href="##">关于我们</a></li>
+		 	</ul>
+	  </div>
+	</div>
+	<!-- ul正常布局, 外面套了一层div,添加类名:collapse,navbar-collapse,navbar-response-collapse
+	
+	button按钮添加类:navbar-toggle,属性:data-toggle="collapse",data-target=".navbar-response-collapse"
+	
+	这有点儿和dropdown类似, 但是还是有区别的:
+	
+	1.button按钮和ul不在同一个父级div下;
+	
+	2.button按钮多了一个属性data-target;
+	
+	3.ul外面套了一个div -->
+
+	<!-- 反色导航条其实是Bootstrap框架为大家提供的第二种风格的导航条，与默认的导航条相比，使用方法并无区别，只是将navbar-deafult类名换成navbar-inverse。其变化只是导航条的背景色和文本做了修改。如下：
+	 -->
+	<div class="navbar navbar-inverse" role="navigation">
+		<div class="navbar-header">
+		      <a href="##" class="navbar-brand">慕课网</a>
+		</div>
+		<ul class="nav navbar-nav">
+		      <li class="active"><a href="">首页</a></li>
+		      <li><a href="">教程</a></li>
+		      <li><a href="">关于我们</a></li>
+		</ul>
+	</div>
+	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+</body>
+</html>
+
+	<!-- 使用方法：
+	
+	1、保证在窄屏时需要折叠的内容必须包裹在带一个div内，并且为这个div加入collapse、navbar-collapse两个类名。最后为这个div添加一个class类名或者id名。
+	
+	2、保证在窄屏时要显示的图标样式（固定写法）：
+	
+	<button class="navbar-toggle" type="button" data-toggle="collapse">
+	  <span class="sr-only">Toggle Navigation</span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	</button>
+	3、并为button添加data-target=".类名/#id名"，究竞是类名还是id名呢？由需要折叠的div来决定。如：
+	
+	需要折叠的div代码段：
+	
+	<div class="collapse navbar-collapse" id="example">
+	      <ul class="nav navbar-nav">
+	      …
+	      </ul>
+	</div>
+	窄屏时显示的图标代码段：
+	
+	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#example">
+	  ...
+	</button>
+	也可以这么写，需要折叠的div代码段：
+	
+	<div class="collapse navbar-collapse example" >
+	      <ul class="nav navbar-nav">
+	      …
+	      </ul>
+	</div>
+	窄屏时要显示的图标：
+	
+	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".example">
+	  ...
+	</button> -->

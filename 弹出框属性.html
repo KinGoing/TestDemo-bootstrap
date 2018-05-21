@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>模态弹出框--实现原理解析（二）</title>
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+<button class="btn btn-primary" type="button">点击我</button>
+<div class="modal fade" id="mymodal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">模态弹出窗标题</h4>
+      </div>
+      <div class="modal-body">
+        <p>模态弹出窗主体内容</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+<script>
+  $(function(){
+    $(".btn").click(function(){
+      $("#mymodal").modal({
+          backdrop:true,//黑色蒙板
+          keyboard:false,//esc
+      })
+    });
+  });
+</script>
+</body>
+</html>

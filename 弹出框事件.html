@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>模态弹出框--实现原理解析（二）</title>
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+<button class="btn btn-primary" type="button">点击我</button>
+<div class="modal fade" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">模态弹出窗标题</h4>
+      </div>
+      <div class="modal-body">
+        <p>模态弹出窗主体内容</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+
+<script>
+  $(function(){
+    $(".btn").click(function(){
+      $("#mymodal").modal("toggle");//show、toggle、hide
+    });
+
+    $('#mymodal').on('show.bs.modal', function (e) {
+      alert("在show方法调用时立即触发（尚未显示之前）；如果单击了一个元素，那么该元素将作为事件的relatedTarget属性");
+    });
+
+    $('#mymodal').on('shown.bs.modal', function (e) {
+      alert("该事件在模态弹出窗完全显示给用户之后（并且等CSS动画完成之后）触发；如果单击了一个元素，那么该元素将作为事件的relatedTarget事件");
+    });
+        
+    $('#mymodal').on('hide.bs.modal', function (e) {
+      alert("在hide方法调用时（但还未关闭隐藏）立即触发");
+    });
+    
+    $('#mymodal').on('hidden.bs.modal', function (e) {
+      alert("该事件在模态弹出窗完全隐藏之后（并且CSS动画漂完成之后）触发");
+    });
+
+  });
+</script>
+</body>
+</html>
